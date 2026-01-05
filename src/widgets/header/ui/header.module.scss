@@ -1,0 +1,185 @@
+@use "@/index.scss" as v;
+
+.header {
+    height: 8rem;
+    padding: 2rem 0;
+    background-color: v.$active-color;
+    box-shadow: .2rem .4rem 2rem .8rem rgba(0, 0, 0, .2);
+
+    .header_inner {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+
+        .logo_wrapper {
+            display: flex;
+            text-decoration: none;
+
+            .logo_img_wrapper {
+                display: flex;
+
+                .img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
+            .text_wrapper {
+                display: flex;
+                flex-direction: column;
+                margin-left: .4rem;
+
+                .logo_title {
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+
+                .logo_subtitle {
+                    font-size: 1.2rem;
+                    margin-top: auto;
+                }
+            }
+        }
+
+        .profile_link {
+            width: 4rem;
+            border-radius: 50%;
+            transition: v.$transition-time;
+            user-select: none;
+            text-decoration: none;
+
+            &:hover > div {
+                p {
+                    background-color: v.$bg-color;
+                    color: v.$active-color;
+                }
+            }
+
+            &:active > div {
+                p {
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 420px) {
+    .header {
+        height: 8.5rem;
+
+        .header_inner {
+            .logo_wrapper {
+                .logo_img_wrapper {
+                    .img {
+                        width: 4.5rem;
+                        height: 4.5rem;
+                    }
+                }
+
+                .text_wrapper {
+                    margin-left: .6rem;
+
+                    .logo_title {
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                    }
+
+                    .logo_subtitle {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            .profile_link {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    .header {
+        height: 10rem;
+
+        .header_inner {
+            .logo_wrapper {
+                .logo_img_wrapper {
+                    .img {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+                }
+
+                .text_wrapper {
+                    margin-left: .6rem;
+
+                    .logo_title {
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                    }
+
+                    .logo_subtitle {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+            .profile_link {
+                width: 7rem;
+                height: 6rem;
+                transition: v.$transition-time;
+
+                &:hover > figure {
+                    transform: scale(1.2);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .header {
+        height: 11.2rem;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+
+        .header_inner {
+            background-color: v.$active-color;
+            padding: 2rem 9rem;
+            border-bottom-left-radius: 9rem;
+            border-bottom-right-radius: 9rem;
+            box-shadow: .2rem .4rem 2rem .8rem rgba(0, 0, 0, .2);
+
+            .logo_wrapper {
+                .logo_img_wrapper {
+                    .img {
+                        width: 7.2rem;
+                        height: 7.2rem;
+                    }
+                }
+
+                .text_wrapper {
+                    margin-left: .6rem;
+
+                    .logo_title {
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                    }
+
+                    .logo_subtitle {
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+
+            .profile_link {
+                width: 9.2rem;
+                height: 7.2rem;
+            }
+        }
+    }
+}

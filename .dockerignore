@@ -1,0 +1,18 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+# Локальные конфиги IDE
+.vscode
+.idea
+# Логи, кэш
+dist
+build
+.DS_Store
+# Переменные
+.env
+.env.dev
+.env.prod
+# Файлы, не нужные в контейнере
+*.log
+*.tmp

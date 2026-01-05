@@ -1,0 +1,341 @@
+@use "@/index.scss" as v;
+
+.input_wrapper {
+    width: 100%;
+    position: relative;
+
+    .input {
+        width: 100%;
+        background-color: v.$bg-color;
+        opacity: .9;
+        border-radius: 5rem;
+        padding: .8rem 1.4rem;
+        z-index: 1;
+        border: .2rem solid #00027D;
+        font-size: 1.4rem;
+        font-weight: 300;
+        transition: v.$transition-time;
+        color: v.$active-color;
+
+        &.password {
+            padding-right: 4rem;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 .1rem #00027D;
+        }
+
+        &:focus + .placeholder {
+            top: -1rem;
+            color: v.$text-color;
+            font-size: 1.2rem;
+        }
+    }
+
+    .error_text {
+        display: none;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 1.4rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #aa0000;
+        opacity: 0;
+        transition: v.$transition-time;
+        white-space: nowrap;
+
+        &.show {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    .placeholder {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1.4rem;
+        color: v.$active-color;
+        z-index: 2;
+        font-size: 1.4rem;
+        font-weight: 300;
+        user-select: none;
+        pointer-events: none;
+        transition: v.$transition-time;
+
+        &.hide {
+            top: -1rem;
+            color: v.$text-color;
+            font-size: 1.2rem;
+        }
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 1.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+
+        .button_img {
+            stroke: v.$active-color;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (min-width: 450px) {
+    .input_wrapper {
+        .input {
+            border-radius: 5rem;
+            padding: .8rem 1.4rem;
+            font-size: 1.8rem;
+
+            &:focus + .placeholder {
+                top: -1.3rem;
+                font-size: 1.6rem;
+            }
+        }
+
+        .error_text {
+            bottom: -2rem;
+            left: 1.6rem;
+            font-size: 1.6rem;
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1.4rem;
+            color: v.$active-color;
+            z-index: 2;
+            font-size: 1.8rem;
+            font-weight: 300;
+            user-select: none;
+            pointer-events: none;
+            transition: v.$transition-time;
+
+            &.hide {
+                top: -1.3rem;
+                color: v.$text-color;
+                font-size: 1.6rem;
+            }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 1.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 0;
+
+            .button_img {
+                stroke: v.$active-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .input_wrapper {
+        .input {
+            border-radius: 8rem;
+            padding: .8rem 2.4rem;
+            font-size: 2.4rem;
+
+            &.password {
+                padding-right: 6rem;
+            }
+
+            &:focus + .placeholder {
+                top: -1.6rem;
+                font-size: 2rem;
+            }
+        }
+
+        .error_text {
+            bottom: -2.2rem;
+            left: 2.4rem;
+            font-size: 1.8rem;
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2.4rem;
+            color: v.$active-color;
+            z-index: 2;
+            font-size: 2.4rem;
+            font-weight: 300;
+            user-select: none;
+            pointer-events: none;
+            transition: v.$transition-time;
+
+            &.hide {
+                top: -1.6rem;
+                color: v.$text-color;
+                font-size: 2rem;
+            }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 2.4rem;
+            height: 3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 0;
+
+            .button_img {
+                stroke: v.$active-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .input_wrapper {
+        .input {
+            border-radius: 8rem;
+            padding: .8rem 2.4rem;
+            font-size: 3.2rem;
+
+            &.password {
+                padding-right: 6rem;
+            }
+
+            &:focus + .placeholder {
+                top: -2.2rem;
+                font-size: 2.8rem;
+            }
+        }
+
+        .error_text {
+            bottom: -3rem;
+            left: 2.4rem;
+            font-size: 2.4rem;
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2.4rem;
+            color: v.$active-color;
+            z-index: 2;
+            font-size: 3.2rem;
+            font-weight: 300;
+            user-select: none;
+            pointer-events: none;
+            transition: v.$transition-time;
+
+            &.hide {
+                top: -2.2rem;
+                color: v.$text-color;
+                font-size: 2.8rem;
+            }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 2.4rem;
+            height: 3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 0;
+
+            .button_img {
+                stroke: v.$active-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 2100px) {
+    .input_wrapper {
+        .input {
+            border-radius: 8rem;
+            padding: .8rem 3rem;
+            font-size: 4.8rem;
+
+            &.password {
+                padding-right: 9rem;
+            }
+
+            &:focus + .placeholder {
+                top: -3.2rem;
+                font-size: 4.2rem;
+            }
+        }
+
+        .error_text {
+            bottom: -4rem;
+            left: 3rem;
+            font-size: 3.2rem;
+        }
+
+        .placeholder {
+            max-width: calc(100% - 12rem);
+            white-space: nowrap;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 3rem;
+            color: v.$active-color;
+            z-index: 2;
+            font-size: 4.8rem;
+            font-weight: 300;
+            user-select: none;
+            pointer-events: none;
+            transition: v.$transition-time;
+
+            &.hide {
+                top: -3.2rem;
+                color: v.$text-color;
+                font-size: 4.2rem;
+            }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 3rem;
+            height: 5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 0;
+
+            .button_img {
+                stroke: v.$active-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,528 @@
+@use "@/index.scss" as v;
+
+.error_img  {
+    stroke: red !important;
+}
+
+.signInForm {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+
+    .signInForm_inner {
+        min-width: 29.7rem;
+        max-width: 106rem;
+        background-color: v.$active-color;
+        border-radius: 3rem;
+        padding-bottom: 1.5rem;
+        padding-right: 1.1rem;
+        padding-left: 1.1rem;
+        box-shadow: 0 .4rem 2rem .8rem rgba(0, 0, 0, .25);
+        animation: appearing .4s ease;
+
+        .title {
+            text-align: center;
+            font-size: 4.8rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.8rem;
+            gap: 3rem;
+
+            .error {
+                border-color: red;
+
+                &:focus {
+                    border-color: red;
+                    box-shadow: 0 0 0 .1rem red;
+                }
+            }
+        }
+
+        .submit {
+            margin-top: 2.8rem;
+
+            &.submit_error {
+                animation: error_submit v.$transition-time linear;
+            }
+        }
+
+        .sign {
+            margin-top: 1.4rem;
+            font-size: 1.4rem;
+            text-align: center;
+
+            .sign_link {
+                font-size: 1.4rem;
+                color: v.$text-color-2;
+                text-decoration: underline;
+                cursor: pointer;
+                transition: v.$transition-time;
+                user-select: none;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &:active {
+                    color: #ff9d2b;
+                }
+            }
+        }
+    }
+}
+
+@keyframes appearing {
+    0% {
+        transform: translateY(-3rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes error_submit {
+    0% {
+        background-color: red;
+        color: v.$text-color;
+    }
+
+    100% {
+        background-color: v.$special-button-color;
+        color: v.$text-color-2;
+    }
+}
+
+@media (min-width: 450px) {
+    .signInForm {
+        .signInForm_inner {
+            min-width: 70%;
+            border-radius: 4rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 5.4rem;
+            }
+
+            .subtitle {
+                font-size: 2.4rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3rem;
+                gap: 4rem;
+            }
+
+            .submit {
+                margin-top: 4rem;
+            }
+
+            .sign {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+
+                .sign_link {
+                    font-size: 1.8rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 650px) {
+    .signInForm {
+        .signInForm_inner {
+            min-width: 60%;
+            border-radius: 4rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 5.4rem;
+            }
+
+            .subtitle {
+                font-size: 2.4rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3rem;
+                gap: 4rem;
+            }
+
+            .submit {
+                margin-top: 4rem;
+            }
+
+            .sign {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+
+                .sign_link {
+                    font-size: 1.8rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .signInForm {
+        .signInForm_inner {
+            min-width: 50%;
+            border-radius: 4rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 5.4rem;
+            }
+
+            .subtitle {
+                font-size: 2.4rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3rem;
+                gap: 4rem;
+            }
+
+            .submit {
+                margin-top: 4rem;
+            }
+
+            .sign {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+
+                .sign_link {
+                    font-size: 1.8rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .signInForm {
+        .signInForm_inner {
+            border-radius: 6rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 6rem;
+            }
+
+            .subtitle {
+                font-size: 2.8rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3.5rem;
+                gap: 5rem;
+            }
+
+            .submit {
+                margin-top: 5rem;
+            }
+
+            .sign {
+                margin-top: 1.5rem;
+                font-size: 2.4rem;
+
+                .sign_link {
+                    font-size: 2.4rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .signInForm {
+        .signInForm_inner {
+            display: flex;
+            flex-direction: column;
+            border-radius: 6rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 6rem;
+            }
+
+            .subtitle {
+                font-size: 2.8rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3.5rem;
+                gap: 5rem;
+            }
+
+            .submit {
+                align-self: center;
+                width: auto;
+                padding: 1rem 10rem;
+                text-align: center;
+                margin-top: 5rem;
+            }
+
+            .sign {
+                margin-top: 1.5rem;
+                font-size: 2.4rem;
+
+                .sign_link {
+                    font-size: 2.4rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .signInForm {
+        .signInForm_inner {
+            display: flex;
+            flex-direction: column;
+            border-radius: 6rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+            .title {
+                font-size: 7.2rem;
+            }
+
+            .subtitle {
+                font-size: 3.6rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3.5rem;
+                gap: 6.4rem;
+            }
+
+            .submit {
+                align-self: center;
+                width: auto;
+                padding: 1rem 15rem;
+                text-align: center;
+                margin-top: 5rem;
+            }
+
+            .sign {
+                margin-top: 1.5rem;
+                font-size: 2.4rem;
+
+                .sign_link {
+                    font-size: 2.4rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1900px) {
+    .signInForm {
+        .signInForm_inner {
+            display: flex;
+            flex-direction: column;
+            border-radius: 6rem;
+            padding-bottom: 2rem;
+            padding-top: .5rem;
+            padding-right: 9.7rem;
+            padding-left: 9.7rem;
+
+            .title {
+                font-size: 9.6rem;
+            }
+
+            .subtitle {
+                margin-top: -2rem;
+                font-size: 4.8rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3.5rem;
+                gap: 6.4rem;
+            }
+
+            .submit {
+                align-self: center;
+                width: auto;
+                padding: 2.5rem 17rem;
+                text-align: center;
+                margin-top: 5rem;
+            }
+
+            .sign {
+                margin-top: 1.5rem;
+                font-size: 3.6rem;
+
+                .sign_link {
+                    font-size: 3.6rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 2100px) {
+    .signInForm {
+        .signInForm_inner {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10rem;
+            padding-bottom: 3rem;
+            padding-top: .5rem;
+            padding-right: 9.7rem;
+            padding-left: 9.7rem;
+
+            .title {
+                font-size: 9.6rem;
+            }
+
+            .subtitle {
+                margin-top: -2rem;
+                font-size: 4.8rem;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 7rem;
+                gap: 9rem;
+            }
+
+            .submit {
+                align-self: center;
+                width: auto;
+                padding: 2.5rem 17rem;
+                text-align: center;
+                margin-top: 7rem;
+            }
+
+            .sign {
+                margin-top: 3rem;
+                font-size: 3.6rem;
+
+                .sign_link {
+                    font-size: 3.6rem;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        color: #ff9d2b;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

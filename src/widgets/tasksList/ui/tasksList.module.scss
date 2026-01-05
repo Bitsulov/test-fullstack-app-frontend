@@ -1,0 +1,15 @@
+@use "@/index.scss" as v;
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    gap: 2.5rem;
+}
+
+@media (min-width: 1000px) {
+    .list {
+        margin-top: 5rem;
+        gap: 3rem;
+    }
+}
