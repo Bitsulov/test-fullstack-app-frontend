@@ -54,5 +54,5 @@ Required create .env file with variables:
     - prod: `/api` (using nginx)
 ---
 ## Links
-1. *main repository ([Test-fullstack-app](https://github.com/Bitsulov/test-fullstack-app.git))*
-2. *backend repository ([Test-fullstack-app-backend](https://github.com/Bitsulov/test-fullstack-app.git))*
+1. **main repository ([Test-fullstack-app](https://github.com/Bitsulov/test-fullstack-app.git))**
+2. **backend repository ([Test-fullstack-app-backend](https://github.com/Bitsulov/test-fullstack-app-backend.git))**
