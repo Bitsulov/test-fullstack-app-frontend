@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Test-fullstack-app-frontend
+### Web frontend application.  
+- Technologies Stack:  
+  - Language: TypeScript + SCSS
+  - Framework: React
+  - Build tool: Vite
+  - Other:
+    - Redux
+    - Axios
+    - Tanstack React Query
+    - Eslint
+> This repository is submodule of main repository ([Test-fullstack-app](https://github.com/Bitsulov/test-fullstack-app.git)) that runs using docker compose.
+---
+## Structure
+- Frontend/
+  - nginx/ - nginx config
+  - public/
+  - src/ - source code
+    - app/
+    - pages/
+    - widgets/
+    - features/
+    - entities/
+    - shared/
+  - index.html - entry point
+  - package.json - app dependencies
+  - tsconfig.json
+  - vite.config.ts
+---
+## Dependencies and requirements
+- **Node.js 18+** - runtime JavaScript
+- **npm / yarn / pnpm** - package manager for Node.js
+- **Docker** - platform for build and run apps in insulated containers
+- **Docker Compose** (if run docker compose) - tool for simple run multiple containers in single virtual network
+## Installation and run
+> The run must be done in the *main repository ([Test-fullstack-app](https://github.com/Bitsulov/test-fullstack-app.git))*.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Run frontend container (development):**
+```bash
+  docker compose -p test-fullstack-dev -f docker-compose-dev.yml --env-file <YOUR_DEV_ENV_FILE> up frontend -d
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Run frontend container (production):**
+```bash
+  docker compose -p test-fullstack-prod -f docker-compose-prod.yml --env-file <YOUR_PROD_ENV_FILE> up frontend -d
 ```
+---
+## Configuration
+Required create .env file with variables:
+1. `VITE_CRYPTO_KEY=` (or `CRYPTO_KEY=` in main repository)
+    - Algorithm: AES-256
+    - Base64-string
+2. `VITE_API_BASE=` (or `API_BASE=` in main repository)
+    - dev: `http://localhost:8080/api`
+    - prod: `/api` (using nginx)
+---
+## Links
+1. *main repository ([Test-fullstack-app](https://github.com/Bitsulov/test-fullstack-app.git))*
+2. *backend repository ([Test-fullstack-app-backend](https://github.com/Bitsulov/test-fullstack-app.git))*
